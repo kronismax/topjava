@@ -1,5 +1,6 @@
 package ru.javawebinar.topjava.repository;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 
 import ru.javawebinar.topjava.model.Meal;
@@ -9,11 +10,18 @@ import ru.javawebinar.topjava.model.Meal;
  * 06.03.2015.
  */
 public interface MealRepository {
-    Meal save(Meal Meal);
+    // null if updated meal do not belong to userId
+    Meal save(Meal Meal, int userId);
 
-    void delete(int id);
+    // false if meal do not belong to userId
+    boolean delete(int id, int userId);
 
-    Meal get(int id);
+    // null if meal do not belong to userId
+    Meal get(int id, int userId);
 
-    Collection<Meal> getAll();
+    // ORDERED dateTime
+    Collection<Meal> getAll(int userId);
+
+    // ORDERED dateTime
+    Collection<Meal> getBetween(LocalDateTime startDate, LocalDateTime endDate, int userId);
 }

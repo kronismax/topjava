@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 import ru.javawebinar.topjava.model.Meal;
-import ru.javawebinar.topjava.model.MealWithExceed;
+import ru.javawebinar.topjava.to.MealWithExceed;
 
 /**
  * GKislin
